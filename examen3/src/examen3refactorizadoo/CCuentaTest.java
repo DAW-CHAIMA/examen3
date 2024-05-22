@@ -1,3 +1,4 @@
+package examen3refactorizadoo;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.DisplayName;
@@ -5,7 +6,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 class CCuentaTest {
-	CCuenta miCuenta = new CCuenta();
+	cuenta1 miCuenta = new cuenta1();
 
 	@ParameterizedTest
 	@CsvSource({"-10,1","-3,2","10,0"})

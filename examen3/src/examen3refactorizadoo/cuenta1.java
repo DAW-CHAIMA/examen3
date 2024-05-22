@@ -1,11 +1,40 @@
-public class CCuenta {
+package examen3refactorizadoo;
+/**
+ *Clase que representa a una cuenta 
+ ** @author Chaima
+ **/
+public class cuenta1 {
     // Propiedades de la Clase Cuenta
+	/**
+	 *Devuelve estado de la cuenta 
+	 ** @return  saldo de la cuenta 
+	 **/
     public double dSaldo;
     public String nombre;
 
     public static void main(String[] args) {
 
-        CCuenta miCuenta = new CCuenta();
+        operativa_cuenta(null);
+    }
+
+	public double getdSaldo() {
+		return dSaldo;
+	}
+
+	public void setdSaldo(double dSaldo) {
+		this.dSaldo = dSaldo;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public static void operativa_cuenta(float cantidad) {
+		cuenta1 miCuenta = new cuenta1();
 
         System.out.println("Saldo Incial: " + miCuenta.dSaldo + " euros");
 
@@ -20,9 +49,13 @@ public class CCuenta {
         System.out.println("Saldo tras ingreso: " + miCuenta.dSaldo + " euros");
         miCuenta.retirar(50);
         System.out.println("Saldo tras retirada: " + miCuenta.dSaldo + " euros");
-    }
+	}
 
     /* Metodo para ingresar cantidades en la cuenta. Modifica el saldo. */
+	/**Ingresa una cantidad en la cuenta 
+	 * @parm Cantidad a ingresar
+	 *  @trows Exception si cantidad es negativa 
+	 * */
     public int ingresar(double cantidad) {
         int iCodErr;
 
@@ -43,8 +76,12 @@ public class CCuenta {
     }
 
     /*
-     * Metodo para retirar cantidades en la cuenta. Modifica el saldo.
+     * Metodo para retirar cantidades en la cuenta. Modifica el saldo que se va a retirar. 
      */
+    /**Retira una cantidad en la cuenta 
+  	 * @parm Cantidad a retirar
+  	 *  @trows Exception si cantidad es negativa o cero
+  	 * */
     public void retirar(double cantidad) {
         if (cantidad <= 0) {
             System.out.println("No se puede retirar una cantidad negativa");
